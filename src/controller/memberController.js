@@ -60,6 +60,7 @@ const updateMember = async (req, res) => {
         avaliable,
         description
      });
+     res.status(200).json({message: "Membro alterado"});
     } catch (error) {
         console.error(error);
         res.status(500).json({message:error.message});
@@ -72,6 +73,7 @@ const deleteMember = async (req, res) => {
         const {id} = req.params;
         const deleteMember = await memberModel.findByIdAndDelete(id);
         const message = `Member with name ${deleteMember.name} was successfully deleted`;
+        res.status(200).json({message: "Membro apagado"});
         } catch (error) {
             console.error(error);
             res.status(500).json({message: error.message});

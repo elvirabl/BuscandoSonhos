@@ -27,7 +27,7 @@ const findAncestorById = async (req,res) =>{
 const addNewAncestor = async (req, res) => {
     try {
         const {
-            memberId,
+            member,
             name,
             lastName,
             dateOfBirth,
@@ -38,18 +38,18 @@ const addNewAncestor = async (req, res) => {
             description,
         } =req.body;
 
-    if (!memberId) {
+    if (!member) {
         return res
             .status(400)
             .json({messge: "Required: Enter the Member id."});
     };
-        const findMember = await memberModel.findById(memberId);
+        const findMember = await memberModel.findById(member);
 
     if (!findMember){
         return res.status(404).json({message: "Member not found"});
     }
 const newAncestor = new ancestorModel({
-        member: memberId,
+        member,
         name,
         lastName,
         dateOfBirth,
@@ -91,6 +91,8 @@ const updateAncestor = async(req,res)=> {
             if (findMember == null) {
                 return res.status(404).json({message: "Member not found"});
             };
+            res.status(200).json({message: "Ancestral alterado"});
+
         };
         findAncestor.name = name || findAncestor.name;
         findAncestor.lastName = lastName || findAncestor.lastName;

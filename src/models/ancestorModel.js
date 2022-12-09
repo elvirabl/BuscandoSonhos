@@ -16,7 +16,7 @@ const ancestorSchema = mongoose.Schema(
       required: true,
     },
     dateOfBirth: {
-      type: Number,
+      type: String,
       required: true,
     },
     paternity: {
@@ -35,8 +35,12 @@ const ancestorSchema = mongoose.Schema(
       type: [String],
       required: true
     },
-    description: String,
-
+    description: {
+      type: String,
+      minLenght:0,
+      maxLenght:1000,
+      defaut:"No description"
+    },
     member: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
