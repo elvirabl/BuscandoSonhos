@@ -1,15 +1,15 @@
 const ancestorModel = require("../models/ancestorModel");
 const memberModel = require("../models/memberModel");
 
-const findAllAncestors = async (req, res) => {
-    try {
-        const allAncestors = await ancestorModel.find().populate("Member");
-        res.status(200).json(allAncestors);
+const findAllAncestor = async (req, res) => {
+    try{
+        const AllAncestors = await ancestorModel.find();
+        res.status(200).json(AllAncestors);
     } catch (error) {
-        res.status(500).json({message: error.message});
-    };
+        console.log(error);
+        res.status(500).json({message: error.message})
+    }
 };
-
 const findAncestorById = async (req,res) =>{
     try {
         const findAncestor = await ancestorModel.findById(req.params.id).populate(
@@ -126,7 +126,7 @@ const deleteAncestor = async (req, res) => {
 };
 
 module.exports = {
-    findAllAncestors,
+    findAllAncestor,
     findAncestorById,
     addNewAncestor,
     updateAncestor,

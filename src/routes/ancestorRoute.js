@@ -2,7 +2,7 @@ const controller = require("../controller/ancestorController");
 const express = require("express");
 const router = express.Router();
 
-router.get("/all", controller.findAllAncestors);
+router.get("/all", controller.findAllAncestor);
 
 router.get("/:id", controller.findAncestorById);
 
