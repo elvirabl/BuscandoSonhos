@@ -25,12 +25,14 @@ const addNewMember = async (req, res) => {
         const {
             name,
             contact,
+            realiseDate,
             avaliable,
             description
         } = req.body;
     const newMember = new memberModel({
         name,
         contact,
+        realiseDate,
         avaliable,
         description
     });
@@ -56,11 +58,13 @@ const updateMember = async (req, res) => {
         contact,
         realiseDate,
         avaliable,
-        description     });
+        description
+     });
      res.status(200).json({message: "Membro alterado"});
     } catch (error) {
         console.error(error);
         res.status(500).json({message:error.message});
+        
     }
 };
 
@@ -72,10 +76,14 @@ const deleteMember = async (req, res) => {
         res.status(200).json({message: "Membro apagado"});
         } catch (error) {
             console.error(error);
+            res.status(500).json({message: error.message});
+        
+    }};
 
     module.exports = {
         findAllMembers,
         findMemberById,
         addNewMember,
         updateMember,
-        }}};
+        deleteMember
+    };

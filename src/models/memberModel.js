@@ -15,7 +15,7 @@ const memberSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
-    realiseDate: {
+    realiseDate:{
         type: String,
         required: true
     },
