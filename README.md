@@ -65,7 +65,7 @@ cópia e enviaremos onde o requerente estiver.
 • swagger-autogen  
 • swagger-ui-express
 
-##Instruções de instalação  
+## Instruções de instalação  
 # Clonar o repositório  
 $ git clone https://github.com/elvirabl/BuscandoSonhos  
 # Instalar as dependências  
@@ -76,7 +76,7 @@ $ npm start
 GET - https://buscandosonhos.onrender.com/buscandosonhos/ancestor/all  
 GET - https://buscandosonhos.onrender.com/buscandosonhos/ancestor/ID  
 GET - https://buscandosonhos.onrender.com/buscandosonhos/members/all  
-GET - https://buscandosonhos.onrender.com/buscandosonhos/members/ID 
+GET - https://buscandosonhos.onrender.com/buscandosonhos/members/ID  
 POST - https://buscandosonhos.onrender.com/buscandosonhos/ancestor/add/  
 POST - https://buscandosonhos.onrender.com/buscandosonhos/members/add  
 PATCH - https://buscandosonhos.onrender.com/buscandosonhos/members/ID  
@@ -85,11 +85,13 @@ DELETE - https://buscandosonhos.onrender.com/buscandosonhos/members/ID
  
 ## Gostaria de contribuir?  
 1. Fork o projeto;  
-2. Crie uma branch para realizar suas alterações: git checkout -b feature/nomeda-sua-branch  
+2. Crie uma branch para realizar suas alterações: git checkout -b feature/nome-da-sua-branch  
 3. Commit suas alterações e abra um pull request  
 
 ## Agradecimentos
 Agradeço a todas as profissionais da equipe Reprograma, em especial a Sra. Janiarli, facilitadora, a Sra. Manuelli Suzik, Prefessora e a Sra. Milena, monitora.
 Gratidão a minha grande amiga Graice Pereira Giacomelli, colega de sala, que me auxiliou em cada momento difícil.
 Gratidão a minha família (humana e pet), que nunca me abandonou.
-Gratidão a Grande Deusa que me guiou nessa grande aventura no mundo da programação.
+Gratidão a Grande Deusa que me guiou nessa grande aventura no mundo da programação.  
+
+![veneto](https://user-images.githubusercontent.com/109379404/207399136-6c21d0c0-d814-4063-8295-4aae0d9f66f8.png)
