@@ -6,6 +6,8 @@ router.get("/all", controller.findAllAncestor);
 
 router.get("/:id", controller.findAncestorById);
 
+router.get("/find/:lastName", controller.findAncestorByLastName);
+
 router.post("/add", controller.addNewAncestor);
 
 router.patch("/:id", controller.updateAncestor);

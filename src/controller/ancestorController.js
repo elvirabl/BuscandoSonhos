@@ -10,19 +10,33 @@ const findAllAncestor = async (req, res) => {
         res.status(500).json({message: error.message})
     }
 };
-const findAncestorById = async (req,res) =>{
+const findAncestorById = async (req, res) => {
     try {
-        const findAncestor = await ancestorModel.findById(req.params.id).populate(
-            "Member"
-        );
-        if (findAncestor == null){
-            res.status(404).json({message: "Ancestor not available"});
-        }
+        const findAncestor = await ancestorModel.findById(req.params.id);
         res.status(200).json(findAncestor);
-    } catch (error) {
-        res.status(500).json({message:error.message});
-    };
+    } catch (error){
+        console.error(error);
+        res.status(500).json({message: error.message})
+    }
 };
+
+const findAncestorByLastName = async (req, res) => {
+    try {
+      const nameLocal = await ancestorModel.findOne({ lastName: req.params.lastName });
+      if (!nameLocal) {
+        return res
+          .status(400)
+          .json({
+            mensagem: `Ancestor not found '${req.query.lastName}`,
+          });
+      }
+      res.status(200).json(nameLocal);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ messagem: error.message });
+    }
+  };
+
 
 const addNewAncestor = async (req, res) => {
     try {
@@ -127,6 +141,7 @@ const deleteAncestor = async (req, res) => {
 
 module.exports = {
     findAllAncestor,
+    findAncestorByLastName,
     findAncestorById,
     addNewAncestor,
     updateAncestor,
