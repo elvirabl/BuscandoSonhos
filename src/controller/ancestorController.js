@@ -37,7 +37,6 @@ const findAncestorByLastName = async (req, res) => {
     }
   };
 
-
 const addNewAncestor = async (req, res) => {
     try {
         const {
